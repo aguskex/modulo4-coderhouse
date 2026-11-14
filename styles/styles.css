@@ -45,9 +45,6 @@ nav ul a {
     font-weight: 560;
 }
 
-/* ==========================================
-   DISEÑO BASE MOBILE-FIRST (Apilado vertical)
-   ================================---------- */
 .grid-section {
     display: flex;
     flex-direction: column;
@@ -89,17 +86,11 @@ footer {
     margin-top: 2rem;
 }
 
-
-/* ==========================================
-   BREAKPOINT DESKTOP (min-width: 1024px)
-   Transformación a CSS Grid usando tus etiquetas
-   ================================---------- */
 @media (min-width: 1024px) {
     nav {
         padding: 1.5rem 5rem;
     }
 
-    /* Convertimos el section en grid container */
     .grid-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -114,7 +105,6 @@ footer {
         align-items: center;
     }
 
-    /* Asignamos cada etiqueta HTML a su área mediante selectores directos */
     .grid-section > h1 {
         grid-area: titulo;
         text-align: center;
