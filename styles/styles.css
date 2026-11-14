@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --primario: #2d2415;
+    --secundario: #6f5834;
+    --acento: #bc9e71;
+}
+
+body {
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 200;
+    background-color: var(--acento);
+    color: var(--primario);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+nav .logo {
+    text-decoration: none;
+    color: var(--primario);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.logopng {
+    width: 35px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--secundario);
+    font-weight: 560;
+}
+
+/* ==========================================
+   DISEÑO BASE MOBILE-FIRST (Apilado vertical)
+   ================================---------- */
+.grid-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 1rem;
+    padding: 20px;
+    text-align: center;
+}
+
+article {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.title {
+    color: var(--primario);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.imagen {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+
+/* ==========================================
+   BREAKPOINT DESKTOP (min-width: 1024px)
+   Transformación a CSS Grid usando tus etiquetas
+   ================================---------- */
+@media (min-width: 1024px) {
+    nav {
+        padding: 1.5rem 5rem;
+    }
+
+    /* Convertimos el section en grid container */
+    .grid-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "titulo titulo"
+            "texto imagen"
+            "epigrafe imagen";
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 4rem auto;
+        text-align: left;
+        align-items: center;
+    }
+
+    /* Asignamos cada etiqueta HTML a su área mediante selectores directos */
+    .grid-section > h1 {
+        grid-area: titulo;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .grid-section > article {
+        grid-area: texto;
+        max-width: 100%;
+    }
+
+    .grid-section > figure {
+        grid-area: imagen;
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid-section > figcaption {
+        grid-area: epigrafe;
+        text-align: center;
+    }
+
+    .imagen {
+        max-width: 100%;
+    }
+}
